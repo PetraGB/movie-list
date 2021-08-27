@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ movie.title }}</h2>
+    <ul>
+        <li>Director: {{ movie.director }}</li>
+        <li>Year: {{ movie.year }}</li>
+        <li>Genre: {{ movie.genre }}</li>
+        <li>Rating: {{ movie.rating }}</li>
+    </ul>
+
+    {% if app.user %}
+        <div class="content">
+            <a href="/add/movie/{{ movie.id }}">Change</a>
+            <a href="/delete/movie/{{ movie.id }}">Delete</a>
+            {% if is_granted('ROLE_REVIEWER') %}
+                <a href="/rate/movie/{{ movie.id }}">Rate</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}
+

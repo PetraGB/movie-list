@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Movies!</h2>
+
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <a href="/movies/{{ movie.id }}">{{ movie.title }}</a> by {{ movie.director ?? 'unknown' }}
+            </li>
+        {% else %}
+            No movies yet.
+        {% endfor %}
+    </ul>
+
+    {% if app.user %}
+        <a href="/add/movie">Add new</a>
+    {% endif %}
+{% endblock %}

@@ -1,3 +1,37 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+movie_list:
+  path: /movies
+  controller: App\Controller\MovieController::getMoviesList
+
+movie:
+  path: /movies/{movieId}
+  controller: App\Controller\MovieController::getMovie
+
+add_movie:
+  path: /add/movie/{movieId?}
+  controller: App\Controller\MovieController::addMovie
+
+rate_movie:
+  path: /rate/movie/{movieId?}
+  controller: App\Controller\MovieController::rateMovie
+
+delete_movie:
+  path: /delete/movie/{movieId?}
+  controller: App\Controller\MovieController::deleteMovie
+
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+  methods: GET|POST
+
+logout:
+  path: /logout
+  methods: GET
+
+register:
+  path: /register
+  controller: App\Controller\UserController::register
+  methods: GET|POST
