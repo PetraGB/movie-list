@@ -39,3 +39,4 @@ security:
          - { path: ^/movies, roles: PUBLIC_ACCESS }
          - { path: ^/add, roles: ROLE_USER }
          - { path: ^/delete, roles: ROLE_USER }
+         - { path: ^/rate, roles: ROLE_REVIEWER }
